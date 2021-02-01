@@ -72,7 +72,8 @@ exports.signout = (req,res)=>{
 
 exports.isSignedIn = expressJwt({
     secret: process.env.SECRET,
-    userProperty: "auth"
+    algorithms: ['HS256']
+    //userProperty: "auth"
 });
 
 
@@ -80,7 +81,7 @@ exports.isSignedIn = expressJwt({
 
 exports.isAuthenticate = (req,res,next) => {
     let checker = req.profile && req.auth && req.profile._id == req.auth._id;
-    if(!checker){
+    if(checker){
         return res.status(403).json({
             msg: "Acess denied"
         });

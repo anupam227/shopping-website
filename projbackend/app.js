@@ -15,7 +15,7 @@ const paymentBRoutes = require("./routes/paymentBRoutes");
 
 const app = express();
 
-mongoose.connect(process.env.DATABASE, {useNewUrlParser: true, useUnifiedTopology: true,useCreateIndex: true}).
+mongoose.connect("mongodb+srv://Anupam227:Anupam27@cluster0.yj5dr.mongodb.net/shopping?retryWrites=true&w=majority", {useNewUrlParser: true, useUnifiedTopology: true,useCreateIndex: true}).
 then(()=>{
     console.log("DB is connected")
 });

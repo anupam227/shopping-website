@@ -1,1 +1,1 @@
-export const API = process.env.REACT_APP_BACKEND;
+export const API = https://tshirt1-website.herokuapp.com/api/
